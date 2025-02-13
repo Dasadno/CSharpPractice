@@ -4,21 +4,22 @@
     {
         static void Main(string[] args)
         {
-            string UserInput;
-            int tmpNum = 0;
-            while (true)
-            { 
-                Console.Write("Введите число: ");
-                UserInput = Console.ReadLine();
-                if (UserInput == "")
+            int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            int[] revArr = new int[arr.Length];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i != 0)
                 {
-                    break;
+                    revArr[i] = arr[arr.Length - i - 1];
                 }
-                int parseUInput = int.Parse(UserInput);
-                if (tmpNum < parseUInput)
+                else
                 {
-                    tmpNum = parseUInput;
+                    revArr[i] = arr[arr.Length - 1];
                 }
+            }
+            foreach (int el in revArr)
+            {
+                Console.Write($"{el} ");
             }
         }
     }
